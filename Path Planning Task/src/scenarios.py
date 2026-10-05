@@ -1,0 +1,204 @@
+from __future__ import annotations
+
+from typing import Dict, List, Tuple
+
+from src.models import CarPose, Cone
+
+
+_SCENARIOS: Dict[str, Tuple[List[Cone], CarPose]] = {
+    "1": (
+        [],
+        CarPose(x=0.0, y=0.0, yaw=0.0),
+    ),
+
+    "2": (
+        [Cone(x=1.0, y=3.0, color=1), Cone(x=1.0, y=1.0, color=0)],
+        CarPose(x=0.0, y=0.0, yaw=0.4),
+    ),
+
+    "3": (
+        [
+            Cone(x=1.0, y=3.0, color=1),
+            Cone(x=3.0, y=3.0, color=1),
+            Cone(x=1.0, y=1.0, color=0),
+            Cone(x=3.0, y=1.0, color=0),
+        ],
+        CarPose(x=0.0, y=0.0, yaw=0.8),
+    ),
+
+    "4": (
+        [Cone(x=4.0, y=2.0, color=0)],
+        CarPose(x=0.0, y=0.0, yaw=1.2),
+    ),
+
+    "5": (
+        [Cone(x=4.0, y=2.0, color=0), Cone(x=3.0, y=2.0, color=0)],
+        CarPose(x=0.0, y=0.0, yaw=1.6),
+    ),
+
+    "6": (
+        [
+            Cone(x=4.0, y=4.0, color=1),
+            Cone(x=4.0, y=2.0, color=0),
+            Cone(x=3.0, y=2.0, color=0),
+        ],
+        CarPose(x=0.0, y=0.0, yaw=2.0),
+    ),
+
+    "7": (
+        [
+            Cone(x=2.0, y=3.0, color=1),
+            Cone(x=4.0, y=3.0, color=1),
+            Cone(x=2.0, y=2.0, color=0),
+        ],
+        CarPose(x=0.0, y=0.0, yaw=1.4),
+    ),
+
+    "8": (
+        [Cone(x=3.0, y=3.0, color=1), Cone(x=5.0, y=3.0, color=1)],
+        CarPose(x=0.0, y=0.0, yaw=1.8),
+    ),
+
+    "9": (
+        [Cone(x=3.0, y=3.0, color=1)],
+        CarPose(x=0.0, y=0.0, yaw=0.2),
+    ),
+
+    "10": (
+        [Cone(x=5.0, y=3.0, color=1), Cone(x=5.0, y=2.0, color=0)],
+        CarPose(x=0.0, y=0.0, yaw=0.6),
+    ),
+
+    "11": (
+        [
+            Cone(x=1.0, y=3.0, color=1),
+            Cone(x=4.0, y=5.0, color=1),
+            Cone(x=1.0, y=2.0, color=0),
+            Cone(x=4.0, y=2.0, color=0),
+        ],
+        CarPose(x=0.0, y=0.0, yaw=1.0),
+    ),
+
+    "12": (
+        [Cone(x=5.0, y=2.0, color=0)],
+        CarPose(x=0.0, y=0.0, yaw=1.4),
+    ),
+
+    "13": (
+        [Cone(x=5.0, y=3.0, color=0), Cone(x=5.0, y=1.0, color=0)],
+        CarPose(x=0.0, y=0.0, yaw=0.1),
+    ),
+
+    "14": (
+        [
+            Cone(x=3.0, y=5.0, color=1),
+            Cone(x=3.0, y=2.0, color=0),
+            Cone(x=5.0, y=2.0, color=0),
+        ],
+        CarPose(x=0.0, y=0.0, yaw=5.2),
+    ),
+
+    "15": (
+        [
+            Cone(x=2.0, y=5.0, color=1),
+            Cone(x=3.0, y=4.0, color=1),
+            Cone(x=3.0, y=2.0, color=0),
+        ],
+        CarPose(x=0.0, y=0.0, yaw=1.6),
+    ),
+
+    "16": (
+        [Cone(x=0.0, y=3.0, color=1), Cone(x=2.0, y=5.0, color=1)],
+        CarPose(x=0.0, y=0.0, yaw=0.2),
+    ),
+
+    "17": (
+        [Cone(x=3.0, y=5.0, color=1)],
+        CarPose(x=0.0, y=0.0, yaw=0.6),
+    ),
+
+    "18": (
+        [Cone(x=2.0, y=4.0, color=1), Cone(x=4.0, y=3.0, color=0)],
+        CarPose(x=0.0, y=0.0, yaw=1.0),
+    ),
+
+    "19": (
+        [
+            Cone(x=2.0, y=3.0, color=1),
+            Cone(x=5.0, y=3.0, color=1),
+            Cone(x=2.0, y=0.0, color=0),
+            Cone(x=5.0, y=2.0, color=0),
+        ],
+        CarPose(x=0.0, y=0.0, yaw=1.4),
+    ),
+
+    "20": (
+        [Cone(x=0.0, y=2.0, color=0)],
+        CarPose(x=0.0, y=0.0, yaw=1.8),
+    ),
+
+    "21": (
+        [Cone(x=1.0, y=1.0, color=1), Cone(x=3.0, y=1.0, color=1), Cone(x=4.0, y=3.0, color=1)],
+        CarPose(x=0.0, y=0.0, yaw=0.0),
+    ),
+
+    "22": (
+        [Cone(x=1.0, y=-0.5, color=0), Cone(x=3.0, y=0.0, color=0), Cone(x=5.0, y=1.0, color=0)],
+        CarPose(x=0.0, y=1.0, yaw=-0.3),
+    ),
+
+    "23": (
+        [
+            Cone(x=-0.4, y=2.4, color=1), Cone(x=0.5, y=4.5, color=1), Cone(x=2.6, y=5.4, color=1),
+            Cone(x=1.4, y=1.6, color=0), Cone(x=1.9, y=3.1, color=0), Cone(x=3.4, y=3.6, color=0),
+        ],
+        CarPose(x=0.5, y=0.0, yaw=1.5708),
+    ),
+
+    "24": (
+        [
+            Cone(x=1.7, y=1.7, color=1), Cone(x=2.8, y=2.6, color=1), Cone(x=3.5, y=4.0, color=1),
+            Cone(x=3.5, y=0.5, color=0), Cone(x=5.1, y=2.5, color=0),
+        ],
+        CarPose(x=0.0, y=0.5, yaw=0.0),
+    ),
+
+    "25": (
+        [
+            Cone(x=-0.5, y=1.5, color=1), Cone(x=0.3, y=3.7, color=1), Cone(x=2.4, y=4.9, color=1),
+            Cone(x=1.9, y=2.5, color=0),
+        ],
+        CarPose(x=0.5, y=0.0, yaw=1.5708),
+    ),
+
+    "26": (
+        [Cone(x=1.0, y=3.0, color=1), Cone(x=2.5, y=4.2, color=1), Cone(x=4.0, y=3.1, color=1)],
+        CarPose(x=0.0, y=2.0, yaw=0.0),
+    ),
+
+    "27": (
+        [
+            Cone(x=2.0, y=0.5, color=0), Cone(x=3.5, y=1.8, color=0),
+            Cone(x=2.4, y=3.0, color=1),
+        ],
+        CarPose(x=0.0, y=0.5, yaw=0.4),
+    ),
+
+    "28": (
+        [Cone(x=2.3, y=-0.5, color=0), Cone(x=4.3, y=0.8, color=0), Cone(x=5.6, y=2.8, color=0)],
+        CarPose(x=0.0, y=0.0, yaw=0.0),
+    ),
+
+}
+
+
+def get_scenario_names() -> List[str]:
+    return sorted(_SCENARIOS.keys(), key=lambda s: int(s))
+
+
+def make_scenario(name: str) -> Tuple[List[Cone], CarPose]:
+    if name not in _SCENARIOS:
+        valid = ", ".join(get_scenario_names())
+        raise ValueError(f"Unknown scenario '{name}'. Valid options: {valid}")
+    cones, car = _SCENARIOS[name]
+    return list(cones), CarPose(x=car.x, y=car.y, yaw=car.yaw)
